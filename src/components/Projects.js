@@ -5,9 +5,30 @@ const Projects = () => {
     <div>
       <h3>Projects</h3>
       <ul>
-        <li>SmartHydro Bottle Order Website</li>
-        <li>Hotel Booking Website</li>
-        <li>Restaurant Menu Website</li>
+        <li>SmartHydro Bottle Order Website —{" "}
+          <a
+            href="https://github.com/stanleyikegwu/my_projects"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Link
+          </a></li>
+        <li>Hotel Booking Website —{" "}
+          <a
+            href="https://github.com/stanleyikegwu/my_projects"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Link
+          </a></li>
+        <li>Restaurant Menu Website —{" "}
+          <a
+            href="https://github.com/stanleyikegwu/my_projects"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Link
+          </a></li>
         <li>
           My Portfolio App —{" "}
           <a
@@ -22,6 +43,16 @@ const Projects = () => {
           Weather App —{" "}
           <a
             href="https://musical-hotteok-5fea59.netlify.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Link
+          </a>
+        </li>
+        <li>
+          recipe app —{" "}
+          <a
+            href="https://remarkable-hamster-d0aeb6.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
           >
