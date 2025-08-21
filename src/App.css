@@ -1,7 +1,9 @@
 .App {
   text-align: center;
   font-family: 'Inter', 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #1f1c2c, #928dab);
+  background: linear-gradient(270deg, #1f1c2c, #928dab, #1f1c2c);
+  background-size: 600% 600%;
+  animation: gradientShift 15s ease infinite;
   padding: 60px 20px;
   min-height: 100vh;
   color: #ecf0f1;
@@ -10,12 +12,12 @@
 }
 
 .header {
-  background: rgba(255, 255, 255, 0.05); /* Colorless transparency */
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   padding: 50px 35px;
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1); /* Optional subtle white border */
+  border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow:
     0 12px 32px rgba(0, 0, 0, 0.3),
     inset 0 0 0 1px rgba(255, 255, 255, 0.08);
@@ -25,6 +27,7 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
+  animation: fadeIn 1.2s ease forwards;
 }
 
 .header::before {
@@ -49,12 +52,15 @@
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.4);
 }
 
-
 .project-title {
   font-size: 2.75rem;
   font-weight: 700;
   margin-bottom: 12px;
-  color: #61dafb;
+  background: linear-gradient(90deg, #61dafb, #1abc9c, #61dafb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: shimmer 4s linear infinite;
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
 
@@ -73,11 +79,14 @@
   margin-bottom: 25px;
   border: 5px solid #61dafb;
   box-shadow: 0 0 15px rgba(97, 218, 251, 0.3);
-  transition: transform 0.8s ease-in-out;
+  transition: transform 0.8s ease-in-out, box-shadow 0.8s ease-in-out;
+  animation: fadeIn 1.4s ease forwards;
 }
 
 .profile-img:hover {
   transform: rotate(360deg) scale(1.1);
+  box-shadow: 0 0 25px rgba(97, 218, 251, 0.6),
+              0 0 50px rgba(97, 218, 251, 0.3);
 }
 
 .links {
@@ -86,6 +95,7 @@
   flex-wrap: wrap;
   gap: 14px;
   margin-top: 20px;
+  animation: fadeIn 1.6s ease forwards;
 }
 
 .links a {
@@ -99,12 +109,102 @@
   font-size: 16px;
   transition: all 0.3s ease;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
 }
 
 .links a:hover {
   background: linear-gradient(135deg, #1abc9c, #3498db);
-  transform: scale(1.08);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  transform: scale(1.08) rotate(-1deg);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+.links a:active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  animation: ripple 0.6s linear;
+}
+
+/* 🔹 Projects Section */
+.projects-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 40px 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.25),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  max-width: 700px;
+  margin: 60px auto;
+  text-align: center;
+  animation: fadeIn 1.4s ease forwards;
+}
+
+.project-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+.project-item {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #ecf0f1;
+  animation: fadeIn 1s ease forwards;
+}
+
+.project-link {
+  padding: 6px 14px;
+  margin-left: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2980b9, #6dd5fa);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-link i {
+  margin-right: 6px;
+}
+
+.project-link:hover {
+  background: linear-gradient(135deg, #1abc9c, #3498db);
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.project-link:active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  animation: ripple 0.6s linear;
+}
+
+/* 🔹 Ripple Animation */
+@keyframes ripple {
+  to {
+    transform: translate(-50%, -50%) scale(25);
+    opacity: 0;
+  }
 }
 
 @media (max-width: 600px) {
@@ -151,7 +251,6 @@
   text-decoration: underline;
 }
 
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -179,4 +278,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
 }
