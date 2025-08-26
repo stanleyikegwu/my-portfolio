@@ -42,21 +42,22 @@ const Projects = () => {
   return (
     <div className="projects-container">
       <h3 className="project-title">Projects</h3>
-      <ul className="project-list">
+      <div className="project-grid">
         {projectList.map((project, index) => (
-          <li key={index} className="project-item">
-            {project.name} —{" "}
+          <div key={index} className="project-card">
+            <h4 className="project-name">{project.name}</h4>
             <a
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
               className="project-link"
             >
-              <i className={project.icon}></i> View Project
+              <i className={project.icon}></i>
+              View Project
             </a>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
