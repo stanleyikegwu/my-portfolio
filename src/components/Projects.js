@@ -3,9 +3,9 @@ import React from 'react';
 const Projects = () => {
   const projectList = [
     {
-      name: "SmartHydro Bottle Order Website",
-      link: "https://github.com/stanleyikegwu/my_projects",
-      icon: "fa-brands fa-github",
+      name: "e-commerce app",
+      link: "https://resplendent-moxie-3a051b.netlify.app/",
+      icon: "fa-solid fa-up-right-from-square",
     },
     {
       name: "Hotel Booking Website",
@@ -35,6 +35,11 @@ const Projects = () => {
     {
       name: "IDMB-clone",
       link: "https://netflx-clone-stagas.netlify.app/",
+      icon: "fa-solid fa-up-right-from-square",
+    },
+    {
+      name: "stanleys crypto price tracker",
+      link: "https://stanleys-crypto-tracker.vercel.app/",
       icon: "fa-solid fa-up-right-from-square",
     },
   ];
