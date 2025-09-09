@@ -19,7 +19,7 @@ const Projects = () => {
     },
     {
       name: "My Portfolio App",
-      link: "https://cerulean-jelly-9fb282.netlify.app",
+      link: "https://my-portfolio-brown-kappa-89.vercel.app/",
       icon: "fa-solid fa-up-right-from-square",
     },
     {
