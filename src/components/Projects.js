@@ -42,6 +42,11 @@ const Projects = () => {
       link: "https://stanleys-crypto-tracker.vercel.app/",
       icon: "fa-solid fa-up-right-from-square",
     },
+    {
+      name: "stanleys movie search web-app",
+      link: "https://stanleys-movie-search-app.vercel.app/",
+      icon: "fa-solid fa-up-right-from-square",
+    },
   ];
 
   return (
