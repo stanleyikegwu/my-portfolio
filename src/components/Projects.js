@@ -3,7 +3,7 @@ import React from 'react';
 const Projects = () => {
   const projectList = [
     {
-      name: "e-commerce app",
+      name: "E-Commerce App",
       link: "https://resplendent-moxie-3a051b.netlify.app/",
       icon: "fa-solid fa-up-right-from-square",
     },
@@ -16,11 +16,6 @@ const Projects = () => {
       name: "Restaurant Menu Website",
       link: "https://github.com/stanleyikegwu/my_projects",
       icon: "fa-brands fa-github",
-    },
-    {
-      name: "My Portfolio App",
-      link: "https://my-portfolio-brown-kappa-89.vercel.app/",
-      icon: "fa-solid fa-up-right-from-square",
     },
     {
       name: "Weather App",
@@ -38,12 +33,12 @@ const Projects = () => {
       icon: "fa-solid fa-up-right-from-square",
     },
     {
-      name: "stanleys crypto price tracker",
+      name: "Stanleys Crypto Price Tracker",
       link: "https://stanleys-crypto-tracker.vercel.app/",
       icon: "fa-solid fa-up-right-from-square",
     },
     {
-      name: "stanleys movie search web-app",
+      name: "Stanleys Movie Search Web-App",
       link: "https://stanleys-movie-search-app.vercel.app/",
       icon: "fa-solid fa-up-right-from-square",
     },
@@ -51,11 +46,11 @@ const Projects = () => {
 
   return (
     <div className="projects-container">
-      <h3 className="project-title">Projects</h3>
+      <h2 className="section-title">Projects</h2>
       <div className="project-grid">
         {projectList.map((project, index) => (
           <div key={index} className="project-card">
-            <h4 className="project-name">{project.name}</h4>
+            <h3 className="project-name">{project.name}</h3>
             <a
               href={project.link}
               target="_blank"

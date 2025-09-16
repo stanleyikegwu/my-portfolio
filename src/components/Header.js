@@ -1,15 +1,19 @@
-// src/components/Header.js
 import React from 'react';
+import profileImage from '../assets/profile.jpg';
 
 const Header = () => {
   return (
-    <div className="header">
+    <div className="hero-section">
       <img
-        src="/WIN_20250805_14_04_09_Pro.jpg"
+        src={profileImage} // Use the imported image
         alt="Ikegwu Stanley"
         className="profile-img"
       />
-      <h1>Ikegwu Stanley</h1>
+      <h1 className="hero-title">Ikegwu Stanley</h1>
+      <p className="hero-subtitle">
+        Full Stack Developer passionate about creating interactive 
+        and responsive web applications with exceptional user experiences.
+      </p>
     </div>
   );
 };
